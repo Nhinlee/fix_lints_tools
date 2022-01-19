@@ -1,0 +1,28 @@
+>>> file paths
+
+/Users/nhinlechi/Documents/manabie/student-app/manabie_learner/lib/res/localizations/app_localizations.dart
+/Users/nhinlechi/Documents/manabie/student-app/manabie_learner/lib/res/localizations/intl_en.arb
+/Users/nhinlechi/Documents/manabie/student-app/manabie_learner/lib/res/localizations/intl_ja.arb
+/Users/nhinlechi/Documents/manabie/student-app/manabie_learner/lib/res/localizations/intl_vi.arb
+
+<<< file paths
+
+
+
+>>> variables
+
+min_per_week
+title_step_1
+title_step_2
+title_step_3
+message_step_1
+message_step_2
+message_step_3
+edit_study_plan
+loading_question
+do_you_need_some_help
+ask_a_tutor
+ask_tutor
+preview_question
+
+<<< variables

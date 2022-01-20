@@ -41,11 +41,10 @@ public class FixLintFileLoader {
             PrintWriter out = new PrintWriter(fileName);
 
             // fix for arb file & localizations
-            if (fileName.contains(".arb")) {
-                variables = addPrefixAndSuffixForVariables(variables, "\"", "\"");
-            } else {
-                variables = addPrefixAndSuffixForVariables(variables, "'", "'");
-            }
+            final List<String> v1s = addPrefixAndSuffixForVariables(variables, "\"", "\"");
+            final List<String> v2s = addPrefixAndSuffixForVariables(variables, "'", "'");
+            variables = v1s;
+            variables.addAll(v2s);
 
             // process fix
             String line;

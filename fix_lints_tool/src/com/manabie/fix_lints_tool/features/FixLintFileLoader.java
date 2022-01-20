@@ -22,6 +22,14 @@ public class FixLintFileLoader {
         }
     }
 
+    private static List<String> addPrefixAndSuffixForVariables(List<String> variables, String prefix, String suffix) {
+        final List<String> rs = new ArrayList<>();
+        for (String varr : variables) {
+            rs.add(prefix + varr + suffix);
+        }
+        return rs;
+    }
+
     public static void fixLintWithSingleFile(String filePath, List<String> variables) {
         try {
             // Get file name
@@ -31,6 +39,15 @@ public class FixLintFileLoader {
             // Read file & print
             BufferedReader in = new BufferedReader(new FileReader(filePath));
             PrintWriter out = new PrintWriter(fileName);
+
+            // fix for arb file & localizations
+            if (fileName.contains(".arb")) {
+                variables = addPrefixAndSuffixForVariables(variables, "\"", "\"");
+            } else {
+                variables = addPrefixAndSuffixForVariables(variables, "'", "'");
+            }
+
+            // process fix
             String line;
             while ((line = in.readLine()) != null) {
                 for (String variable : variables) {
